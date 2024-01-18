@@ -6,12 +6,13 @@ class Snake():
         self.s_color = s_color
         self.segments = []
         self.create_snake()
+        self.head = self.segments[0]
     
     """method creates snake segments and adds them to the segments list"""
     def create_snake(self):
 
         for positon in STARTING_POSITION:
-            new_segment = Turtle(shape="circle")
+            new_segment = Turtle(shape="square")
             new_segment.color(self.s_color)
             new_segment.penup()
             new_segment.goto(positon)
