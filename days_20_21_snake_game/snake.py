@@ -26,6 +26,17 @@ class Snake():
             self.segments[seg_num].goto(new_x, new_y)
         self.segments[0].forward(20)
 
+    def add_segment(self, positon):
+        new_segment = Turtle(shape="square")
+        new_segment.color(self.s_color)
+        new_segment.penup()
+        new_segment.goto(positon)
+        self.segments.append(new_segment)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+       
+
     """Set headings to direct snake motion"""
 
     def up(self):
